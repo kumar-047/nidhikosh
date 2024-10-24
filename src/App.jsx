@@ -8,6 +8,7 @@ import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import ForgotPassword from "./pages/ForgotPassword";
+import { CartProvider } from "./context/CartContext";
 
 function App() {
   const location = useLocation();
@@ -30,9 +31,11 @@ function App() {
 
 function AppWrapper() {
   return (
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 
