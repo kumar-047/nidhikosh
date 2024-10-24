@@ -1,16 +1,19 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Navbar from './component/Navbar';
-import Footer from './component/Footer';
-import Home from './pages/Home';
-import Categories from './pages/Categories';
-import Cart from './pages/Cart';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
+import React from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import Navbar from "./component/Navbar";
+import Footer from "./component/Footer";
+import Home from "./pages/Home";
+import Categories from "./pages/Categories";
+import Cart from "./pages/Cart";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import ForgotPassword from "./pages/ForgotPassword";
 
 function App() {
+  const location = useLocation();
+
   return (
-    <BrowserRouter>
+    <>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -18,10 +21,19 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
       </Routes>
-      <Footer /> 
+      {location.pathname === "/" && <Footer />}
+    </>
+  );
+}
+
+function AppWrapper() {
+  return (
+    <BrowserRouter>
+      <App />
     </BrowserRouter>
   );
 }
 
-export default App;
+export default AppWrapper;
