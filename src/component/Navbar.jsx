@@ -1,11 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <nav className="bg-white shadow-md py-4">
+    <nav className="bg-gray-900 text-gray-200 shadow-md py-4">
       <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-        <Link to="/" className="text-lg font-bold text-gray-800">
+        {/* Branding */}
+        <Link
+          to="/"
+          className="text-2xl font-bold text-blue-400 flex items-center"
+        >
           <span className="sr-only">Nidhikosh</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -13,7 +27,7 @@ const Navbar = () => {
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
-            className="w-6 h-6 mr-2"
+            className="w-6 h-6 mr-2 text-blue-400"
           >
             <path
               strokeLinecap="round"
@@ -23,47 +37,44 @@ const Navbar = () => {
           </svg>
           Nidhikosh
         </Link>
+
+        {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8">
-          <Link to="/categories" className="text-gray-600 hover:text-gray-900">
+          <Link
+            to="/categories"
+            className="hover:text-blue-400 transition duration-300"
+          >
             Categories
           </Link>
-          <Link to="/cart" className="text-gray-600 hover:text-gray-900">
+          <Link
+            to="/cart"
+            className="hover:text-blue-400 transition duration-300"
+          >
             Cart
           </Link>
-          <Link to="/login" className="text-gray-600 hover:text-gray-900">
+          <Link
+            to="/login"
+            className="hover:text-blue-400 transition duration-300"
+          >
             Login
           </Link>
-          <Link to="/signup" className="text-gray-600 hover:text-gray-900">
+          <Link
+            to="/signup"
+            className="hover:text-blue-400 transition duration-300"
+          >
             Signup
           </Link>
         </div>
-        <div className="relative w-full md:w-auto">
-          <input
-            type="search"
-            placeholder="Search products"
-            className="w-full pl-10 text-sm text-gray-700"
-          />
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="absolute top-1/2 left-3 transform -translate-y-1/2 w-5 h-5 text-gray-600"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              fillRule="evenodd"
-              d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-              clipRule="evenodd"
-            />
-          </svg>
-        </div>
-        <button className="md:hidden">
+
+        {/* Mobile Menu Button */}
+        <button className="md:hidden focus:outline-none" onClick={toggleMenu}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
-            className="w-6 h-6"
+            className="w-6 h-6 text-blue-400"
           >
             <path
               strokeLinecap="round"
@@ -73,6 +84,71 @@ const Navbar = () => {
           </svg>
         </button>
       </div>
+
+      {/* Mobile Side Navbar */}
+      <div
+        className={`fixed top-0 right-0 h-full w-64 bg-gray-800 text-gray-200 transform ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        } transition-transform duration-300 ease-in-out z-50`}
+      >
+        <div className="flex justify-between items-center p-4">
+          <h2 className="text-xl font-bold">Menu</h2>
+          <button onClick={closeMenu} className="focus:outline-none">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              className="w-6 h-6 text-gray-400"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+        <nav className="flex flex-col space-y-4 p-4">
+          <Link
+            to="/categories"
+            className="hover:text-blue-400 transition duration-300"
+            onClick={closeMenu}
+          >
+            Categories
+          </Link>
+          <Link
+            to="/cart"
+            className="hover:text-blue-400 transition duration-300"
+            onClick={closeMenu}
+          >
+            Cart
+          </Link>
+          <Link
+            to="/login"
+            className="hover:text-blue-400 transition duration-300"
+            onClick={closeMenu}
+          >
+            Login
+          </Link>
+          <Link
+            to="/signup"
+            className="hover:text-blue-400 transition duration-300"
+            onClick={closeMenu}
+          >
+            Signup
+          </Link>
+        </nav>
+      </div>
+
+      {/* Overlay */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black opacity-50 z-40"
+          onClick={closeMenu}
+        ></div>
+      )}
     </nav>
   );
 };
