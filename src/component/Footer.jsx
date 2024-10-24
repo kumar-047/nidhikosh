@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-10 md:space-y-0">
           {/* Logo and Description */}
           <div className="w-full md:w-1/4">
-            <h2 className="text-3xl font-bold text-white">Nidhikosh</h2>
+            <h2 className="text-3xl font-bold text-white">Trend Bazaar</h2>
             <p className="mt-4 text-gray-400">
               Your one-stop shop for all your favorite products. From men's wear
               to luxury goods, we offer quality products and easy shopping.
@@ -50,7 +50,7 @@ const Footer = () => {
                   href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=jilkumargolakiya44@gmail.com"
                   className="text-gray-400 hover:text-white transition-colors duration-300"
                 >
-                  Support Email: support@nidhikosh.in
+                  Support Email: support@Trend Bazaar.in
                 </a>
               </li>
             </ul>
@@ -94,7 +94,7 @@ const Footer = () => {
         {/* Bottom Border and Copyright */}
         <div className="mt-10 pt-5 border-t border-gray-700 text-center">
           <p className="text-gray-500">
-            &copy; 2024 Nidhikosh. All rights reserved.
+            &copy; 2024 Trend Bazaar. All rights reserved.
           </p>
         </div>
       </div>

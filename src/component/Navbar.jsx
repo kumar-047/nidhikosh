@@ -20,7 +20,7 @@ const Navbar = () => {
           to="/"
           className="text-2xl font-bold text-blue-400 flex items-center"
         >
-          <span className="sr-only">Nidhikosh</span>
+          <span className="sr-only">Trend Bazaar</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -35,17 +35,17 @@ const Navbar = () => {
               d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 17h.01"
             />
           </svg>
-          Nidhikosh
+          Trend Bazaar
         </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8">
-          <Link
+          {/* <Link
             to="/categories"
             className="hover:text-blue-400 transition duration-300"
           >
             Categories
-          </Link>
+          </Link> */}
           <Link
             to="/cart"
             className="hover:text-blue-400 transition duration-300"

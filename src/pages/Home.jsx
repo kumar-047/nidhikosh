@@ -3,6 +3,10 @@ import { getProducts } from "../activity/api";
 import { CartContext } from "../context/CartContext";
 import womanImage from "../assets/hero/women.png";
 import saleImage from "../assets/hero/sale.png";
+import Phone from "../assets/electronics/Phone.webp";
+import Laptop from "../assets/electronics/Laptop.webp";
+import Headphones from "../assets/electronics/Headphones.webp";
+import TV from "../assets/electronics/TV.webp";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -35,9 +39,6 @@ const Home = () => {
           <p className="mt-4 text-lg text-gray-600">
             Discover our exclusive collection of men's fashion.
           </p>
-          <button className="bg-orange-500 text-white px-6 py-3 mt-8 rounded-full shadow-md hover:bg-orange-600 transition duration-300">
-            Shop Now
-          </button>
         </div>
         <img
           src={womanImage}
@@ -113,6 +114,105 @@ const Home = () => {
           alt="Winter Sale"
           className="mt-10 mx-auto opacity-90"
         />
+      </section>
+
+      {/* Electronics Section */}
+      <section className="py-12 flex flex-col content-center items-center">
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-8 ">
+          Top Electronics
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4 ">
+          <div
+            className="bg-white p-6 rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105 hover:shadow-xl flex flex-col
+          items-center"
+          >
+            <div className="overflow-hidden rounded-lg">
+              <img src={Phone} alt="Phone" className="h-48 object-cover" />
+            </div>
+            <div className="mt-4 text-center">
+              <h3 className="text-lg font-bold text-gray-800">Phone</h3>
+              <p className="text-yellow-500 mt-2">⭐ 4.5</p>
+              <button className="bg-gray-800 text-white px-4 py-2 mt-4 rounded-full hover:bg-gray-900 transition duration-300 w-full">
+                Buy Now
+              </button>
+            </div>
+          </div>
+
+          <div
+            className="bg-white p-6 rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105 hover:shadow-xl flex flex-col
+          items-center"
+          >
+            <div className="overflow-hidden rounded-lg">
+              <img src={Laptop} alt="Laptop" className="h-48 object-cover" />
+            </div>
+            <div className="mt-4 text-center">
+              <h3 className="text-lg font-bold text-gray-800">Laptop</h3>
+              <p className="text-yellow-500 mt-2">⭐ 4.6</p>
+              <button className="bg-gray-800 text-white px-4 py-2 mt-4 rounded-full hover:bg-gray-900 transition duration-300 w-full">
+                Buy Now
+              </button>
+            </div>
+          </div>
+
+          <div
+            className="bg-white p-6 rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105 hover:shadow-xl flex flex-col
+          items-center"
+          >
+            <div className="overflow-hidden rounded-lg">
+              <img
+                src={Headphones}
+                alt="Headphones"
+                className="h-48 object-cover"
+              />
+            </div>
+            <div className="mt-4 text-center">
+              <h3 className="text-lg font-bold text-gray-800">Headphones</h3>
+              <p className="text-yellow-500 mt-2">⭐ 4.4</p>
+              <button className="bg-gray-800 text-white px-4 py-2 mt-4 rounded-full hover:bg-gray-900 transition duration-300 w-full">
+                Buy Now
+              </button>
+            </div>
+          </div>
+
+          <div
+            className="bg-white p-6 rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105 hover:shadow-xl flex flex-col
+          items-center"
+          >
+            <div className="overflow-hidden rounded-lg">
+              <img src={TV} alt="TV" className="h-48 object-cover" />
+            </div>
+            <div className="mt-4 text-center">
+              <h3 className="text-lg font-bold text-gray-800">TV</h3>
+              <p className="text-yellow-500 mt-2">⭐ 4.7</p>
+              <button className="bg-gray-800 text-white px-4 py-2 mt-4 rounded-full hover:bg-gray-900 transition duration-300 w-full">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-16 bg-gray-50 text-center">
+        <h2 className="text-3xl font-bold mb-8 text-gray-800">
+          Customer Testimonials
+        </h2>
+        <div className="space-y-8 px-4">
+          {["Virat Kohli", "Sachin Tendulkar", "Victor"].map(
+            (customer, idx) => (
+              <div
+                key={idx}
+                className="bg-white p-8 rounded-lg shadow-lg mx-auto max-w-xl transform transition-transform duration-500 hover:scale-105"
+              >
+                <p className="text-gray-700 mb-4">
+                  "The products exceeded my expectations! High quality and great
+                  service."
+                </p>
+                <h3 className="font-bold text-gray-800">{customer}</h3>
+              </div>
+            )
+          )}
+        </div>
       </section>
     </div>
   );
