@@ -1,57 +1,105 @@
-import React from 'react';
-import { FaInstagram, FaLinkedin, FaFacebook } from 'react-icons/fa';
+import React from "react";
+import { FaInstagram, FaLinkedin, FaFacebook } from "react-icons/fa";
 
 const Footer = () => {
-    return (
-        <footer className="bg-gray-900 text-gray-300 py-10 transition duration-500 ease-in-out transform translate-y-full md:translate-y-0"
-        >
-            <div className="container mx-auto px-4">
-                <div className="flex flex-col md:flex-row justify-between items-center">
-                    {/* Logo and Description */}
-                    <div className="mb-8 md:mb-0">
-                        <h2 className="text-2xl font-bold text-white">Nidhikosh</h2>
-                        <p className="mt-4 text-gray-400">
-                            Your one-stop shop for all your favorite products. From men's wear to luxury goods, we offer quality products and easy shopping.
-                        </p>
-                    </div>
+  return (
+    <footer className="bg-gray-900 text-gray-300 py-12">
+      <div className="container mx-auto px-6 lg:px-20">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-10 md:space-y-0">
+          {/* Logo and Description */}
+          <div className="w-full md:w-1/4">
+            <h2 className="text-3xl font-bold text-white">Nidhikosh</h2>
+            <p className="mt-4 text-gray-400">
+              Your one-stop shop for all your favorite products. From men's wear
+              to luxury goods, we offer quality products and easy shopping.
+            </p>
+          </div>
 
-                    {/* Important Links */}
-                    <div className="mb-8 md:mb-0">
-                        <h3 className="text-xl font-semibold text-white">Important Links</h3>
-                        <ul className="mt-4 space-y-2">
-                            <li><a href="/" className="hover:underline">Home</a></li>
-                            <li><a href="/blog" className="hover:underline">Blog</a></li>
-                            <li><a href="/about" className="hover:underline">About Us</a></li>
-                            <li><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=jilkumargolakiya44@gmail.com" className="hover:underline">
-                                Support Email: support@nidhikosh.in
-                            </a>
-                            </li>
-                        </ul>
-                    </div>
+          {/* Important Links */}
+          <div className="w-full md:w-1/4">
+            <h3 className="text-xl font-semibold text-white mb-4">
+              Important Links
+            </h3>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="/"
+                  className="text-gray-400 hover:text-white transition-colors duration-300"
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/blog"
+                  className="text-gray-400 hover:text-white transition-colors duration-300"
+                >
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/about"
+                  className="text-gray-400 hover:text-white transition-colors duration-300"
+                >
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=jilkumargolakiya44@gmail.com"
+                  className="text-gray-400 hover:text-white transition-colors duration-300"
+                >
+                  Support Email: support@nidhikosh.in
+                </a>
+              </li>
+            </ul>
+          </div>
 
-                    {/* Social Media Links */}
-                    <div className="mb-8 md:mb-0">
-                        <h3 className="text-xl font-semibold text-white">Follow Us</h3>
-                        <div className="flex space-x-4 mt-4">
-                            <a href="https://instagram.com" className="hover:text-white"><FaInstagram size={24} /></a>
-                            <a href="https://linkedin.com" className="hover:text-white"><FaLinkedin size={24} /></a>
-                            <a href="https://facebook.com" className="hover:text-white"><FaFacebook size={24} /></a>
-                        </div>
-                    </div>
-
-                    {/* Contact Info */}
-                    <div className="text-center md:text-right">
-                        <h3 className="text-xl font-semibold text-white">Contact Us</h3>
-                        <p className="mt-4 text-gray-400">Ahmedabad, Gujarat  </p>
-                        <p className="text-gray-400">Phone: +91-3113541351</p>
-                    </div>
-                </div>
-                <div className="border-t border-gray-700 mt-8 pt-4 text-center text-gray-500">
-                    &copy; 2024 Nidhikosh. All rights reserved.
-                </div>
+          {/* Social Media Links */}
+          <div className="w-full md:w-1/4">
+            <h3 className="text-xl font-semibold text-white mb-4">Follow Us</h3>
+            <div className="flex space-x-5 mt-4">
+              <a
+                href="https://instagram.com"
+                className="text-gray-400 hover:text-white transition duration-300"
+              >
+                <FaInstagram size={28} />
+              </a>
+              <a
+                href="https://linkedin.com"
+                className="text-gray-400 hover:text-white transition duration-300"
+              >
+                <FaLinkedin size={28} />
+              </a>
+              <a
+                href="https://facebook.com"
+                className="text-gray-400 hover:text-white transition duration-300"
+              >
+                <FaFacebook size={28} />
+              </a>
             </div>
-        </footer>
-    );
+          </div>
+
+          {/* Contact Info */}
+          <div className="w-full md:w-1/4 text-left md:text-right">
+            <h3 className="text-xl font-semibold text-white mb-4">
+              Contact Us
+            </h3>
+            <p className="mt-2 text-gray-400">Ahmedabad, Gujarat</p>
+            <p className="text-gray-400">Phone: +91-3113541351</p>
+          </div>
+        </div>
+
+        {/* Bottom Border and Copyright */}
+        <div className="mt-10 pt-5 border-t border-gray-700 text-center">
+          <p className="text-gray-500">
+            &copy; 2024 Nidhikosh. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;
